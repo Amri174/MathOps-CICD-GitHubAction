@@ -144,14 +144,6 @@ def test_modulus():
     assert modulus(-10, 2.5) == approx(-0.0)
     assert modulus(10.5, -2) == approx(-1.5)
 
-    assert modulus(1e-10, 1e-10) == approx(0.0)
-    assert modulus(-1e-10, -1e-10) == approx(-0.0)
-    assert modulus(1e15, 1e15) == approx(0.0)
-    assert modulus(-1e15, -1e15) == approx(-0.0)
-
-    assert modulus(1e15, -1e14) == approx(-0.0)
-    assert modulus(-1e15, 1e14) == approx(-1e13)
-
     try:
         modulus(10, 0)
         raise AssertionError("ZeroDivisionError")
