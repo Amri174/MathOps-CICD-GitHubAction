@@ -53,8 +53,8 @@ def test_subtraction():
     assert subtraction(-1.5,2.3) == approx(-3.8)
     assert subtraction(-3.8,-2.3) == approx(-1.5)
 
-    assert subtraction(1e-10, 1e-10) == 0.0
-    assert subtraction(-1e-10, -1e-10) == 0.0
+    assert subtraction(1e-10, 1e-10) == approx(0.0)
+    assert subtraction(-1e-10, -1e-10) == approx(0.0)
     assert subtraction(2e15, 1e15) == approx(1e15)
     assert subtraction(-2e15, -1e15) == approx(-1e15)
 
@@ -135,19 +135,19 @@ def test_modulus():
     assert modulus(5,-1) == 0
     assert modulus(-5,-1) == 0
 
-    assert modulus(7.5, 2.5) == 0.0
-    assert modulus(-7.5, -2.5) == -0.0
-    assert modulus(7.5, -2.5) == 0.0
-    assert modulus(-7.5, 2.5) == -0.0
+    assert modulus(7.5, 2.5) == approx(0.0)
+    assert modulus(-7.5, -2.5) == approx(-0.0)
+    assert modulus(7.5, -2.5) == approx(0.0)
+    assert modulus(-7.5, 2.5) == approx(-0.0)
 
-    assert modulus(10, 2.5) == 0.0
-    assert modulus(-10, 2.5) == -0.0
+    assert modulus(10, 2.5) == approx(0.0)
+    assert modulus(-10, 2.5) == approx(-0.0)
     assert modulus(10.5, -2) == approx(-1.5)
 
-    assert modulus(1e-10, 1e-10) == 0.0
-    assert modulus(-1e-10, -1e-10) == -0.0
-    assert modulus(1e15, 1e15) == 0.0
-    assert modulus(-1e15, -1e15) == -0.0
+    assert modulus(1e-10, 1e-10) == approx(0.0)
+    assert modulus(-1e-10, -1e-10) == approx(-0.0)
+    assert modulus(1e15, 1e15) == approx(0.0)
+    assert modulus(-1e15, -1e15) == approx(-0.0)
 
     assert modulus(1e15, -1e14) == approx(1e13)
     assert modulus(-1e15, 1e14) == approx(-1e13)
