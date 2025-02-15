@@ -18,14 +18,14 @@ def test_addition():
     assert addition(100000,200000) == 300000
     assert addition(-100000,-200000) == -300000
 
-    assert addition(1.5, 2.3) == 3.8
-    assert addition(-1.5, -2.3) == -3.8
+    assert addition(1.5, 2.3) == approx(3.8)
+    assert addition(-1.5, -2.3) == approx(-3.8)
     assert addition(1.5, -2.3) == approx(-0.8)
-    assert addition(-1.5, 2.3) == 0.8
+    assert addition(-1.5, 2.3) == approx(0.8)
 
-    assert addition(10, 2.5) == 12.5
-    assert addition(-10, 2.5) == -7.5
-    assert addition(10.5, -2) == 8.5
+    assert addition(10, 2.5) == approx(12.5)
+    assert addition(-10, 2.5) == approx(-7.5)
+    assert addition(10.5, -2) == approx(8.5)
 
     assert addition(1e-10, 1e-10) == approx(2e-10)
     assert addition(-1e-10, -1e-10) == approx(-2e-10)
@@ -48,10 +48,10 @@ def test_subtraction():
     assert subtraction(300000,200000) == 100000
     assert subtraction(-300000,-200000) == -100000
 
-    assert subtraction(3.8,2.3) == 1.5
-    assert subtraction(1.5,-2.3) == 3.8
-    assert subtraction(-1.5,2.3) == -3.8
-    assert subtraction(-3.8,-2.3) == -1.5
+    assert subtraction(3.8,2.3) == approx(1.5)
+    assert subtraction(1.5,-2.3) == approx(3.8)
+    assert subtraction(-1.5,2.3) == approx(-3.8)
+    assert subtraction(-3.8,-2.3) == approx(-1.5)
 
     assert subtraction(1e-10, 1e-10) == 0.0
     assert subtraction(-1e-10, -1e-10) == 0.0
@@ -73,10 +73,10 @@ def test_multiplication():
     assert multiplication(100000,200000) == 20000000000
     assert multiplication(-100000,-200000) == 20000000000
 
-    assert multiplication(10,2.5) == 25.0
-    assert multiplication(-10,2.5) == -25.0
-    assert multiplication(10.5,-2) == -21.0
-    assert multiplication(-15,-2.3) == 34.5
+    assert multiplication(10,2.5) == approx(25.0)
+    assert multiplication(-10,2.5) == approx(-25.0)
+    assert multiplication(10.5,-2) == approx(-21.0)
+    assert multiplication(-15,-2.3) == approx(34.5)
 
     assert multiplication(1e-10,1e-10) == approx(1e-20)
     assert multiplication(-1e-10,-1e-10) == approx(1e-20)
@@ -100,20 +100,20 @@ def test_division():
     assert division(5,-1) == -5
     assert division(-5,-1) == 5
 
-    assert division(10, 2.5) == 4.0
-    assert division(-10, 2.5) == -4.0
-    assert division(10.5, -2) == -5.25
-    assert division(-7.5,-2.5) == 3.0
+    assert division(10, 2.5) == approx(4.0)
+    assert division(-10, 2.5) == approx(-4.0)
+    assert division(10.5, -2) == approx(-5.25)
+    assert division(-7.5,-2.5) == approx(3.0)
  
-    assert division(4, 0.25) == 16.0
-    assert division(-4, 0.25) == -16.0
+    assert division(4, 0.25) == approx(16.0)
+    assert division(-4, 0.25) == approx(-16.0)
 
-    assert division(1e-10, 1e-10) == 1.0
-    assert division(-1e-10, -1e-10) == 1.0
-    assert division(1e15, 1e15) == 1.0
-    assert division(-1e15, -1e15) == 1.0
+    assert division(1e-10, 1e-10) == approx(1.0)
+    assert division(-1e-10, -1e-10) == approx(1.0)
+    assert division(1e15, 1e15) == approx(1.0)
+    assert division(-1e15, -1e15) == approx(1.0)
 
-    assert division(1e15, -1e15) == -1.0
+    assert division(1e15, -1e15) == approx(-1.0)
 
     try:
         division(10, 0)
@@ -142,7 +142,7 @@ def test_modulus():
 
     assert modulus(10, 2.5) == 0.0
     assert modulus(-10, 2.5) == -0.0
-    assert modulus(10.5, -2) == 0.5
+    assert modulus(10.5, -2) == approx(0.5)
 
     assert modulus(1e-10, 1e-10) == 0.0
     assert modulus(-1e-10, -1e-10) == -0.0
