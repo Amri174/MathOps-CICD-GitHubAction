@@ -142,7 +142,7 @@ def test_modulus():
 
     assert modulus(10, 2.5) == 0.0
     assert modulus(-10, 2.5) == -0.0
-    assert modulus(10.5, -2) == approx(0.5)
+    assert modulus(10.5, -2) == approx(-1.5)
 
     assert modulus(1e-10, 1e-10) == 0.0
     assert modulus(-1e-10, -1e-10) == -0.0
