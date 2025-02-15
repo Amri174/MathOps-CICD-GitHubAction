@@ -20,7 +20,7 @@ def test_addition():
 
     assert addition(1.5, 2.3) == 3.8
     assert addition(-1.5, -2.3) == -3.8
-    assert addition(1.5, -2.3) == -0.8
+    assert addition(1.5, -2.3) == approx(-0.8)
     assert addition(-1.5, 2.3) == 0.8
 
     assert addition(10, 2.5) == 12.5
@@ -125,7 +125,7 @@ def test_division():
 def test_modulus():
     assert modulus(10,3) == 1
     assert modulus(9,-4) == -3
-    assert modulus(-9,4) == -1
+    assert modulus(-9,4) == 3
     assert modulus(-9,-4) == -1
 
     assert modulus(0,5) == 0
