@@ -149,7 +149,7 @@ def test_modulus():
     assert modulus(1e15, 1e15) == approx(0.0)
     assert modulus(-1e15, -1e15) == approx(-0.0)
 
-    assert modulus(1e15, -1e14) == approx(1e13)
+    assert modulus(1e15, -1e14) == approx(-0.0)
     assert modulus(-1e15, 1e14) == approx(-1e13)
 
     try:
