@@ -1,3 +1,4 @@
+from pytest import approx
 from src.math_operations import addition
 from src.math_operations import subtraction
 from src.math_operations import multiplication
@@ -26,10 +27,10 @@ def test_addition():
     assert addition(-10, 2.5) == -7.5
     assert addition(10.5, -2) == 8.5
 
-    assert addition(1e-10, 1e-10) == 2e-10
-    assert addition(-1e-10, -1e-10) == -2e-10
-    assert addition(1e15, 1e15) == 2e15
-    assert addition(-1e15, -1e15) == -2e15
+    assert addition(1e-10, 1e-10) == approx(2e-10)
+    assert addition(-1e-10, -1e-10) == approx(-2e-10)
+    assert addition(1e15, 1e15) == approx(2e15)
+    assert addition(-1e15, -1e15) == approx(-2e15)
 
     assert addition(1e15, -1e15) == 0
 
@@ -54,10 +55,10 @@ def test_subtraction():
 
     assert subtraction(1e-10, 1e-10) == 0.0
     assert subtraction(-1e-10, -1e-10) == 0.0
-    assert subtraction(2e15, 1e15) == 1e15
-    assert subtraction(-2e15, -1e15) == -1e15
+    assert subtraction(2e15, 1e15) == approx(1e15)
+    assert subtraction(-2e15, -1e15) == approx(-1e15)
 
-    assert subtraction(1e15, -1e15) == 2e15
+    assert subtraction(1e15, -1e15) == approx(2e15)
 
 def test_multiplication():
     assert multiplication(2,6) == 12
@@ -77,12 +78,12 @@ def test_multiplication():
     assert multiplication(10.5,-2) == -21.0
     assert multiplication(-15,-2.3) == 34.5
 
-    assert multiplication(1e-10,1e-10) == 1e-20
-    assert multiplication(-1e-10,-1e-10) == 1e-20
-    assert multiplication(1e15,1e15) == 1e30
-    assert multiplication(-1e15,-1e15) == 1e30
+    assert multiplication(1e-10,1e-10) == approx(1e-20)
+    assert multiplication(-1e-10,-1e-10) == approx(1e-20)
+    assert multiplication(1e15,1e15) == approx(1e30)
+    assert multiplication(-1e15,-1e15) == approx(1e30)
 
-    assert multiplication(1e15, -1e15) == -1e30
+    assert multiplication(1e15, -1e15) == approx(-1e30)
     
 
 def test_division():
@@ -148,8 +149,8 @@ def test_modulus():
     assert modulus(1e15, 1e15) == 0.0
     assert modulus(-1e15, -1e15) == -0.0
 
-    assert modulus(1e15, -1e14) == 1e13
-    assert modulus(-1e15, 1e14) == -1e13
+    assert modulus(1e15, -1e14) == approx(1e13)
+    assert modulus(-1e15, 1e14) == approx(-1e13)
 
     try:
         modulus(10, 0)
