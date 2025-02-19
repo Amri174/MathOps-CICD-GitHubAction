@@ -10,7 +10,7 @@ This demonstration is based on implementation of Continuous Integration (CI) and
 
 ## Project Structure
 ```
-Simple-CI-CD-GitHubAction/
+MathOps-CICD-GitHubAction/
 │
 ├── src/
 │   ├── math_operations.py       # Python module with mathematical functions
@@ -30,8 +30,8 @@ Simple-CI-CD-GitHubAction/
 Clone the repository:
 
 ```
-git clone https://github.com/Amri174/Simple-CI-CD-GitHubAction.git
-cd Simple-CI-CD-GitHubAction
+git clone https://github.com/Amri174/MathOps-CICD-GitHubAction.git
+cd MathOps-CICD-GitHubAction
 ```
 Create and activate a virtual environment:
 
